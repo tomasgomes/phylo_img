@@ -14,6 +14,10 @@ img_simp = fromJSON(rawToChar(res$content))
 npag = img_simp$totalPages
 linkp = "https://api.phylopic.org/images?build=175&page="
 links = "https://api.phylopic.org"
+
+# WARNING: this takes very long,
+## will occasionally ask for used prompts, and may need to be restarted several times
+
 for(i in seq(0, npag-1)){
   cat(i, sep = " ")
   imgpag = GET(paste0(linkp, i))
